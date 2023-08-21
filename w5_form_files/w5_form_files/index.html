@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--The type of font we are using-->
+    <meta charset="UTF-8">
+    <!--Tells the -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leynadth Sosa">
+    <meta name="description" content="w5">
+    
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <title>Week 5 | Tables and Forms</title>
+</head>
+<body>
+    <H1>Birthday Party Registration Form</H1>
+<form action="confirm.html" method="get">
+        <!--tables goes immediately im the form!-->
+        <table>
+            <tbody>
+            <!--table head <th>- for column headers-->
+            <tr><!--Table row-->
+                
+                <!--left column [LABELS]-->
+                <td>
+                    <b>Labels</b>
+                </td>
+
+                <!--Right column[inputs]-->
+                <td>
+                    <b>Form Fields</b>
+                </td>
+
+
+
+
+
+            <!--table head <th>- for column headers-->
+                <tr><!--Table row-->
+                
+                    <!--left column [LABELS]-->
+                    <td>
+                        <label for="firstname">Parent/Guardian Name: </label>
+                    </td>
+    
+                    <!--Right column[inputs]-->
+                    <td>
+                        <input type="text"  name="firstName" id="firstname" placeholder="First Name">
+                        <br>
+                        <input type="text"  name="lastName" id="lastname" placeholder="Last Name">
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                    <td>
+                        <label for="firstname2">Child's First Name: </label>
+                    </td>
+    
+                    <!--Right column[inputs]-->
+                    <td>
+                        <input type="text"  name="firstname2" id="firstname2" placeholder="Child's First Name">
+                    </td>
+                    </tr>
+
+
+
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="age2">Child's Age: </label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="text"  name="age2" id="age2">
+                        </td>
+                    </tr>
+
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <h2>Date and Time </h2>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="date">Date: </label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="date" name="date" id="date">
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="time">Start Time </label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="time" name="time" id="time">
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="guest">Number of Guest: </label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="text"  name="guest" id="guest">
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <h2>Food </h2>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                        </td>
+                    </tr>
+
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label>Size</label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="radio" name="size"
+                            value="small">Sm
+
+                            <input type="radio" name="size"
+                            value="medium">Med
+
+                            <input type="radio" name="size"
+                            value="large">lg
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label>Drinks</label>
+                        </td>
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="checkbox" name="drink" value="Coke">Coke<br>
+                            <input type="checkbox" name="drink" value="Sprite">Sprite<br>
+                            <input type="checkbox" name="drink" value="fruit punch">Fruit Punch<br>
+                            <input type="checkbox" name="drink" value="lemonade">Lemonade<br>
+                            <input type="checkbox" name="drink" value="Iced Tea">Iced Tea<br>
+                        </td>
+                    </tr>
+                    
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="cake">Cake</label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <select name="cake" id="cake">
+                              <option value="chocolate">Chocolate</option>
+                              <option value="vanilla">Vanilla</option>
+                              <option value="strawberry">Strawberry</option>
+                            </select>
+
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <h2>Decorations </h2>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="color">Color Scheme </label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            Choose a theme for the party <br>
+                            <input type="color"  id="color"
+>
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                            <label for="comments">Additional Comments </label>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <textarea name="comments" id="comments" rows="10" cols="20" placeholder="Please add any additional comments"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr><!--Table row-->
+                
+                        <!--left column [LABELS]-->
+                        <td>
+                        </td>
+        
+                        <!--Right column[inputs]-->
+                        <td>
+                            <input type="submit" value="SUBMIT !">
+                        </td>
+                    </tr>
+                </tbody>
+            <!--table body <tbody> - REQUIRED for table contents-->
+
+
+
+
+
+
+
+
+
+        </table>
+
+
+    </form>
+<footer>
+    <img src="images/Screenshot (40).png">
+</footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--The type of font we are using-->
+    <meta charset="UTF-8">
+    <!--Tells the -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leynadth Sosa">
+    <meta name="description" content="w6">
+    
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+    <title>Week 6 | JS Intro</title>
+
+        <style>
+            body{background-color:red}
+        </style>
+
+</head>
+<body>
+    <h1>Week 6 Pay Calculator</h1>
+
+    <script>
+         // Get user input for hourly pay and hours worked
+        var hourlyPay = Number(prompt("Enter your hourly pay:"));
+        var hoursWorked = Number(prompt("Enter hours worked for a two-week period:"));
+
+        // Calculate Gross Pay, Tax, and Net Pay
+        var grossPay = hourlyPay * hoursWorked;
+        var tax = grossPay * 0.20;
+        var netPay = grossPay - tax;
+
+        // Format and display the results
+        var formattedGrossPay = grossPay.toFixed(2);
+        var formattedTax = tax.toFixed(2);
+        var formattedNetPay = netPay.toFixed(2);
+
+        console.log("Gross Pay: $" + formattedGrossPay);
+        console.log("Uncle Sam's Share: $" + formattedTax);
+        console.log("Net Pay: $" + formattedNetPay);
+
+        alert("Gross Pay: $" + formattedGrossPay + "\nUncle Sam's Share: $" + formattedTax + "\nNet Pay: $" + formattedNetPay);
+    </script>
+</body>
+</html>

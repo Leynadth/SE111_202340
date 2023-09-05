@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Edit the meta tag below to hold YOUR name! -->
+    <meta name="author" content="__YOUR NAME HERE!__">
+    <meta name="description" content="Week 7 Assignment practicing Javascript & HTML">
+    <title>Week 7 | Pay Form Calculator Assignment</title>
+</head>
+<body>
+
+    <!-- Title of the page -->
+   <h1> Pay Calculator Form </h1>
+
+   <!-- Start of the form -->
+   <!-- Each <input> must have an id that matches its corresponding label -->
+   <!-- Each form element is separated by a break space (new line) -->
+    <form>
+        <label for="first">First Name: </label>
+        <input type="text" id="first">
+
+        <br>
+
+        <label for="last">Last Name: </label>
+        <input type="text" id="last">
+
+        <br>
+
+        <label for="hours">Hours Worked: </label>
+        <input type="text" id="hours">
+
+        <br>
+
+        <label for="rate">Hourly Rate: </label>
+        <input type="text" id="rate">
+
+        <br>
+
+        <br>
+
+        <!-- Give the button below (that is the only form element without a label) an id of "enter-button" -->
+        <input type="button" id="enter-button" value="Enter">
+
+        <br>
+        <br>
+
+        <div id="final" style="border:1px solid rgb(87, 86, 86); padding:15px; background-color:rgb(168, 168, 168);">
+
+            <h3>Employee Info: </h3>
+            <p id="info" style="font-family:Courier New, monospace;"><i>Information will be loaded once the above form is filled.</i></p>
+            <!-- NOTES FOR TESTING:
+                    * below is where the form values (and new values processed by the js) will be displayed -->
+            <p id="check" style="font-family:Courier New, monospace; width:220px; text-align:right;"></p>
+        </div>
+
+        <br>
+        <br>
+
+        <!-- NOTES FOR TESTING:
+                * clicking the below button will trigger a call to the submitNow() function
+                * success will be determined if correct info is displayed in the alert() -->
+        <h3><i>If the above information is correct, please press "SUBMIT"</i></h3>
+        <input type="button" id="submit" value="SUBMIT">
+    </form>
+
+    <script>
+        // Declare the 'info' variable outside the function so it can be accessed in both functions
+        var info = document.querySelector('#info');
+
+        // Edit the below statement to select the #enter-button id from the HTML file
+        document.querySelector('#enter-button').addEventListener('click', alertName);
+
+        // Function to handle the "Enter" button click
+        function alertName(e) {
+            // Get each *value* from the form elements (first name, last name, hours worked, hourly rate) and store them into vars
+
+            /* USE THE FOLLOWING VARIABLE NAMES:
+            fname --> first name, #first
+            lname --> last name, #last
+            hours --> hours worked, #hours
+            rate --> hourly rate, #rate */
+            var fname = document.querySelector('#first').value;
+            var lname = document.querySelector('#last').value;
+            var hours = parseFloat(document.querySelector('#hours').value);
+            var rate = parseFloat(document.querySelector('#rate').value);
+
+            // Log all four values
+            console.log(fname);
+            console.log(lname);
+            console.log(hours);
+            console.log(rate);
+
+            // Add the first and last name values together and store into a new variable called 'full' holding the user's full name
+            var full = fname + ' ' + lname;
+
+            // Log the full name value
+            console.log(full);
+
+            // Convert both hours and rate to Number() data types
+            hours = Number(hours);
+            rate = Number(rate);
+
+            // Create gross, taxAmount, net variables and store corresponding data to them
+            // Use a tax percentage of 20% (0.2)
+            var gross = hours * rate;
+            var taxAmount = gross * 0.2;
+            var net = gross - taxAmount;
+
+            // Log all three processed values, rounded to the second decimal place
+            console.log(gross.toFixed(2));
+            console.log(taxAmount.toFixed(2));
+            console.log(net.toFixed(2));
+
+            // Create a new variable called 'finalMessage' that holds the literal string value of the following, each value on a new line (use <br>):
+            // full name, hours worked*, hourly rate*   *--> rounded to the second decimal place
+            var finalMessage = `Full Name: ${full}<br>Hours Worked: ${hours.toFixed(2)}<br>Hourly Rate: $${rate.toFixed(2)}`;
+
+            // Edit the innerHTML of the #info element (now the 'info' js var) to hold the value of 'finalMessage'
+            info.innerHTML = finalMessage;
+
+            // Create a new var called 'num' and store the entire #check *HTML element* to it
+            var num = document.querySelector('#check');
+
+            // Edit the innerHTML of the #check element (now the 'check' js var) to hold a literal string with the following values:
+            // gross pay, tax amount, net pay. All three values should be rounded to the second decimal place. Use <br> to break onto a new line for each value
+            num.innerHTML = `Gross Pay: $${gross.toFixed(2)}<br>Tax Amount: $${taxAmount.toFixed(2)}<br>Net Pay: $${net.toFixed(2)}`;
+
+            // Add a 'click' event listener to the #submit HTML element
+            // When the #submit button is clicked, the submitNow function should run
+            document.querySelector('#submit').addEventListener('click', submitNow);
+        }
+
+        // Function to handle the "SUBMIT" button click
+        function submitNow(e) {
+            // Alert the information entered and processed
+            alert(info.innerHTML);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Leynadth Sosa ortiz">
+    <meta name="description" content="Week 9 Assignment">
+    <title>Week 9</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var people = [
+            { first: "Jason", last: "Vorhees", credit: "Friday the 13th" },
+            { first: "Freddy", last: "Krueger", credit: "A Nightmare on Elm Street" },
+            { first: "Roger", last: "Rabbit", credit: "Who Framed Roger Rabbit" },
+            { first: "Kevin", last: "McCallister", credit: "Home Alone" },
+            { first: "Godzilla", last: "King of The Monsters", credit: "Godzilla" },
+            { first: "Buzz", last: "Lightyear", credit: "Toy Story" },
+            { first: "Marion", last: "Cobretti", credit: "Cobra" }
+        ]
+
+        var body = document.body;
+        for (var i = 0; i < people.length; i++) {
+            var tempDiv = document.createElement("div");
+            tempDiv.setAttribute("id", String(i));
+            tempDiv.setAttribute("class", "border");
+            for (var prop in people[i]) {
+                if (people[i].hasOwnProperty(prop)) {
+                    var tempP = document.createElement("p");
+                    var textNode = document.createTextNode(prop + ": " + people[i][prop]);
+                    tempP.appendChild(textNode);
+                    tempDiv.appendChild(tempP);
+                }
+            }
+            body.appendChild(tempDiv);
+
+            if (i < people.length - 1) {
+                var hr = document.createElement("hr");
+                body.appendChild(hr);
+            }
+        }
+    </script>
+        <img src="Screenshot (33).png">
+</body>
+
+</html>
